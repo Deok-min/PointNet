@@ -28,7 +28,7 @@ def main():
     parser = argparse.ArgumentParser(description="PyTorch Object Detection Inference")
     parser.add_argument(
         "--config-file",
-        default="/private/home/fmassa/github/detectron.pytorch_v2/configs/e2e_faster_rcnn_R_50_C4_1x_caffe2.yaml",
+        default="/home/hdm/Scene-Graph-Benchmark.pytorch/configs/e2e_relation_X_101_32_8_FPN_1x.yaml",
         metavar="FILE",
         help="path to config file",
     )
@@ -70,7 +70,7 @@ def main():
     # Initialize mixed-precision if necessary
     use_mixed_precision = cfg.DTYPE == 'float16'
     amp_handle = amp.init(enabled=use_mixed_precision, verbose=cfg.AMP_VERBOSE)
-
+    # print("@\n@\n@\n@\n@\n@\n@\n@\n@\n@\n@\n@\n@", cfg, "@\n@\n@\n@\n@\n@\n@\n@\n@\n@\n@\n@\n@")
     output_dir = cfg.OUTPUT_DIR
     checkpointer = DetectronCheckpointer(cfg, model, save_dir=output_dir)
     _ = checkpointer.load(cfg.MODEL.WEIGHT)

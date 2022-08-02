@@ -336,6 +336,7 @@ def load_graphs(roidb_file, split, num_im, num_val_im, filter_empty_rels, filter
         relationships: List where each element is a [num_r, 3] array of 
                     (box_ind_1, box_ind_2, predicate) relationships
     """
+    print(roidb_file)
     roi_h5 = h5py.File(roidb_file, 'r')
     data_split = roi_h5['split'][:]
     split_flag = 2 if split == 'test' else 0

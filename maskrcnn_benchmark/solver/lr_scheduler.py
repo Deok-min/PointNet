@@ -143,7 +143,7 @@ class WarmupReduceLROnPlateau(object):
         if epoch is None:
             epoch = self.last_epoch + 1
         self.last_epoch = epoch
-
+        print("@@@@@@@@@@@@@@ ", metrics," @@@@@@@@@@@@@@\n")
         # The following part is modified from ReduceLROnPlateau
         if metrics is None:
             # not conduct validation yet
